@@ -16,6 +16,7 @@
                  :date        (cnt/date)}]
      (println "Generating your reagent app: " (cnt/project-name name))
      (cnt/->files data
+                  [".dir-locals.el"                 (render ".dir-locals.el" data)]
                   ["deps.edn"                       (render "deps.edn" data)]
                   ["README.md"                      (render "README.md" data)]
                   [".gitignore"                     (render ".gitignore")]
